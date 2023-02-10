@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="post" id="testLoginForm">
+      <div>
+        <label>name</label>
+        <input type="text" required name="name" />
+      </div>
+      <div>
+        <label>email</label>
+        <input type="email" required name="email" />
+      </div>
+      <div>
+        <label>Test id</label>
+        <input type="text" required name="testId" />
+      </div>
+      <button type="submit" id="testLoginForm_button">Enter test</button>
+    </form>
+    <div class="video-wrap">
+      <video id="video" playsinline autoplay></video>
+    </div>
+    <div class="take-photo-button">
+      <button id="snap">Captue</button>
+    </div>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <!-- <script src="render.js"></script> -->
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- Program flow
+
+  1) User will click on the extension 
+  2) After entering the test detials use will click enter test button // POST: /test/login
+  3) Verify at the backend whether the person can give the test 
+     - if(personCanGiveTest) {
+       - ask for the camera and mic permissions 
+       - After granting the permission start the test with timer 
+       - show the user face continuously 
+       - capture image and send it to the server.   // POST : /test/saveImages 
+
+     }
+     else{ 
+      display an error message at the the form that you already appeared for the test.
+     }
+-->
